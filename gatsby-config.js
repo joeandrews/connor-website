@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
+    title: 'Connor Macleod ',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -35,4 +35,5 @@ module.exports = {
     },
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
-}
+};
+

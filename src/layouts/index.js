@@ -1,20 +1,21 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 
-import Navbar from '../components/Navbar'
-import './all.sass'
+import Navbar from '../components/Navbar';
+import './all.sass';
 
-const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet title="Home | Gatsby + Netlify CMS" />
+const TemplateWrapper = ({children}) => (
+  <div className="template-wrapper">
+    <Helmet title="Connor Macleaod || Videographer" />
     <Navbar />
-    <div>{children()}</div>
+    <div className="template-content">{children()}</div>
   </div>
-)
+);
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,
-}
+};
 
-export default TemplateWrapper
+export default TemplateWrapper;
+
