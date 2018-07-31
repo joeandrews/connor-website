@@ -50,6 +50,10 @@ $primary-invert: $kaldi-red-invert
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  z-index: 100;
+  pointer-events: none;
+  &.is-transparent 
+    background: rgba(255,255,255,0.1);
   .container 
     display: flex;
     flex-direction: column;
@@ -58,6 +62,7 @@ $primary-invert: $kaldi-red-invert
     padding: 0px;
     margin: 0px;
     margin-bottom: 200px !important;
+    pointer-events: none;
   h1
     font-weight: 800;
     font-size: 28px;
