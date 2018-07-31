@@ -11,38 +11,33 @@ export default class IndexPage extends React.Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 2,
+      slidesToShow: 3,
       centerMode: true,
-      variableWidth: true,
-      // focusOnSelect: true,
+      // variableWidth: true,
+      focusOnSelect: true,
       slidesToScroll: 1,
     };
+    console.log(posts);
     return (
       <section className="section">
         <div className="container">
-          <Slider {...settings}>
-            {posts.map(({node: post}) => (
-              <div className="content" style={{width: '200px'}} key={post.id}>
-                <Link className="has-text-primary" to={post.fields.slug}>
-                  {/*
-                
-                <p>
-                  <Link className="has-text-primary" to={post.fields.slug}>
-                    {post.frontmatter.title}
-                  </Link>
-                  <span> &bull; </span>
-                  <small>{post.frontmatter.date}</small>
-                </p>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button is-small" to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
-                */}
-                </Link>
+          <Slider
+            {...settings}
+            ref={c => {
+              this.slider = c;
+              window.slider = c;
+            }}
+          >
+            {posts.map(({node: post}, index) => (
+              <div className="content" style={{width: '400px'}} key={post.id}>
+                <div className="slide-index">{`0${index}`}</div>
+                <div className="vertical-text">{post.frontmatter.title}</div>
+                <div
+                  className="thumbnail"
+                  style={{
+                    backgroundImage: `url(${post.frontmatter.thumbnail})`,
+                  }}
+                />
               </div>
             ))}
           </Slider>
@@ -68,13 +63,13 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 400)
           id
           fields {
             slug
           }
           frontmatter {
             title
+            thumbnail
             templateKey
             date(formatString: "MMMM DD, YYYY")
           }

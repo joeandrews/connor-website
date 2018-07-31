@@ -57,7 +57,7 @@ $primary-invert: $kaldi-red-invert
     justify-content: center;
     padding: 0px;
     margin: 0px;
-    margin-bottom: 100px !important;
+    margin-bottom: 200px !important;
   h1
     font-weight: 800;
     font-size: 28px;
@@ -78,25 +78,61 @@ $primary-invert: $kaldi-red-invert
   left: 0px;
   height: 100%;
   display: flex;
+  width: 100%;
   align-items: flex-end;
   .section,.container,.slick-list,.slick-track,.slick-slider
     height: 100%;
+    width: 100%;
     padding: 0px;
-    .slick-slide
-      border-right: 1px solid grey;
-      border-left: 1px solid grey;
-      margin: 0px 30px;
-    .slick-prev
-      left: 25px;
-      z-index: 100;
-      pointer-events: all;
-    .slick-next
-      right: 25px;
-      z-index: 100;
-      pointer-events: all;
-    .slick-prev:before, .slick-next:before
-      color: black;
-
+    outline: none;
+  .slick-slide > div:first-child
+    position: relative;
+    height: 100%;
+    width: 100%;
+    div 
+      outline: none;
+      webkit-appearance: none;
+  .slick-slide
+    border-right: 1px solid #f1f1f3;
+    border-left: 1px solid #f1f1f3;
+    margin: 0px 30px;
+    outline: none;
+    .content
+      position: relative;
+      height: 100%;
+      width: 100%;
+      .slide-index
+        bottom: 305px;
+        position: absolute;
+        right: 5px;
+      .vertical-text
+        transform: rotate(90deg);
+        transform-origin: bottom right 0px;
+        bottom: 25px;
+        position: absolute;
+        right: -5px;
+        text-overflow: ellipsis;
+        width: 300px;
+      .thumbnail
+        position: absolute;
+        width: 100%;
+        bottom: 0px;
+        left: 0px;
+        background-size: cover;
+        height: 300px;
+        z-index: 10;
+  .slick-prev
+    // z-index: 100;
+    // pointer-events: all;
+    left: 25px;
+  .slick-next
+    // z-index: 100;
+    // pointer-events: all;
+    right: 25px;
+  .slick-prev:before, .slick-next:before
+    color: black;
+  .slick-dots
+    display: none !important;
       
 
 @import "~bulma"
