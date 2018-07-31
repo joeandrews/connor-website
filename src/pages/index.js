@@ -10,14 +10,12 @@ export default class IndexPage extends React.Component {
     const settings = {
       dots: true,
       infinite: true,
-      speed: 500,
+      speed: 600,
       slidesToShow: 3,
       centerMode: true,
       // variableWidth: true,
-      focusOnSelect: true,
       slidesToScroll: 1,
     };
-    console.log(posts);
     return (
       <section className="section">
         <div className="container">
