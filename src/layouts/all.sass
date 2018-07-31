@@ -53,7 +53,8 @@ $primary-invert: $kaldi-red-invert
   z-index: 100;
   pointer-events: none;
   &.is-transparent 
-    background: rgba(255,255,255,0.1);
+    background: rgba(249, 249, 249, 0.44);
+    opacity: 0.95;
   .container 
     display: flex;
     flex-direction: column;
@@ -65,10 +66,11 @@ $primary-invert: $kaldi-red-invert
     pointer-events: none;
   h1
     font-weight: 800;
-    font-size: 28px;
-    color: black;
+    font-size: 36px;
+    color: #232325;
     margin-bottom: -20px;
     text-transform: uppercase;
+    letter-spacing: inherit;
   .navbar-brand
     margin: 0 !important;
     margin-left: 200px !important;
@@ -77,6 +79,9 @@ $primary-invert: $kaldi-red-invert
   .navbar-item
     padding: 0px
     margin-right: 15px;
+    color: #868686;
+    letter-spacing: 0.08em;
+    font-weight: 600;
 .template-content
   position: absolute;
   top: 0px;
@@ -98,8 +103,8 @@ $primary-invert: $kaldi-red-invert
       outline: none;
       webkit-appearance: none;
   .slick-slide
-    border-right: 1px solid #f1f1f3;
-    border-left: 1px solid #f1f1f3;
+    border-right: 1px solid #f1f1f1;
+    border-left: 1px solid #f1f1f1;
     margin: 0px 30px;
     outline: none;
     .content
@@ -110,6 +115,8 @@ $primary-invert: $kaldi-red-invert
         bottom: 305px;
         position: absolute;
         right: 5px;
+        color: #232325;
+        font-weight: 500;
       .vertical-text
         transform: rotate(90deg);
         transform-origin: bottom right 0px;
@@ -117,6 +124,8 @@ $primary-invert: $kaldi-red-invert
         position: absolute;
         right: -5px;
         text-overflow: ellipsis;
+        color: #868686;
+        font-weight: 300;
         width: 300px;
       .thumbnail
         position: absolute;

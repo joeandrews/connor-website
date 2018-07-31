@@ -30,7 +30,7 @@ export default class IndexPage extends React.Component {
           >
             {posts.map(({node: post}, index) => (
               <div className="content" style={{width: '400px'}} key={post.id}>
-                <div className="slide-index">{`0${index}`}</div>
+                <div className="slide-index">{`0${index + 1}`}</div>
                 <div className="vertical-text">{post.frontmatter.title}</div>
                 <div
                   className="thumbnail"
