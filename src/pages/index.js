@@ -12,12 +12,12 @@ export default class IndexPage extends React.Component {
       dots: true,
       infinite: true,
       draggable: false,
-      autoplay: true,
-      speed: 600,
+      // autoplay: true,
+      speed: 1000,
       slidesToShow: 3,
 
-      centerMode: true,
-      // variableWidth: true,
+      // centerMode: true,
+      variableWidth: true,
       slidesToScroll: 1,
     };
     return (

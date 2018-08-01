@@ -58,10 +58,10 @@ $primary-invert: $kaldi-red-invert
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 0px;
     margin: 0px;
-    margin-bottom: 200px !important;
+    margin-top: 200px !important;
     pointer-events: none;
   h1
     font-weight: 800;
@@ -101,6 +101,8 @@ $primary-invert: $kaldi-red-invert
     div 
       outline: none;
       webkit-appearance: none;
+  .slick-list
+    overflow: hidden;
   .slick-slide
     border-right: 1px solid #f1f1f1;
     border-left: 1px solid #f1f1f1;
@@ -111,15 +113,15 @@ $primary-invert: $kaldi-red-invert
       height: 100%;
       width: 100%;
       .slide-index
-        bottom: 305px;
+        bottom: 405px;
         position: absolute;
         right: 5px;
         color: #232325;
         font-weight: 500;
       .vertical-text
         transform: rotate(90deg);
-        transform-origin: bottom right 0px;
-        bottom: 25px;
+        transform-origin: bottom right 100px;
+        bottom: 125px;
         position: absolute;
         right: -5px;
         text-overflow: ellipsis;
@@ -129,23 +131,25 @@ $primary-invert: $kaldi-red-invert
       .thumbnail
         position: absolute;
         width: 100%;
-        bottom: 0px;
+        bottom: 100px;
         left: 0px;
         background-size: cover;
         height: 300px;
         z-index: 10;
   .slick-prev
-    // z-index: 100;
-    // pointer-events: all;
-    left: 25px;
+    left: -25px;
+    bottom: 40px;
+    top: auto;
   .slick-next
     // z-index: 100;
     // pointer-events: all;
-    right: 25px;
+    right: -25px;
+    bottom: 40px;
+    top: auto;
   .slick-prev:before, .slick-next:before
     color: black;
   .slick-dots
-    display: none !important;
+    bottom: 50px;
       
 
 @import "~bulma"
