@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Slider from 'react-slick';
+import GatsbyImage from 'gatsby-image';
 
 export default class IndexPage extends React.Component {
   render() {
@@ -10,8 +11,11 @@ export default class IndexPage extends React.Component {
     const settings = {
       dots: true,
       infinite: true,
+      draggable: false,
+      autoplay: true,
       speed: 600,
       slidesToShow: 3,
+
       centerMode: true,
       // variableWidth: true,
       slidesToScroll: 1,
