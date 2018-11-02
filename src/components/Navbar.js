@@ -1,28 +1,29 @@
-import React from 'react';
-import Link from 'gatsby-link';
+import React from "react";
+import Link from "gatsby-link";
 
 const Navbar = () => (
-  <nav className="navbar is-transparent">
+  <section className="section">
     <div className="container">
-      <div className="navbar-brand">
-        <Link to="/" className="navbar-item">
-          <h1> Connor Macleod</h1>
-        </Link>
-      </div>
-      <div className="navbar-start">
-        <Link className="navbar-item" to="/about">
-          work
-        </Link>
-        <Link className="navbar-item" to="/about">
-          about
-        </Link>
-        <Link className="navbar-item" to="/about">
-          contact
-        </Link>
-      </div>
+      <nav className="navbar is-transparent">
+        <div className="navbar-brand">
+          <Link to="/" className="navbar-item">
+            <h1> Connor Macleod</h1>
+          </Link>
+        </div>
+        <div className="navbar-start">
+          <Link className="navbar-item" to="/tags/video">
+            videos
+          </Link>
+          <Link className="navbar-item" to="/tags/photo">
+            photos
+          </Link>
+          <Link className="navbar-item" to="/about">
+            about
+          </Link>
+        </div>
+      </nav>
     </div>
-  </nav>
+  </section>
 );
 
 export default Navbar;
-

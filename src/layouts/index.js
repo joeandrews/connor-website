@@ -1,21 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
 
-import Navbar from '../components/Navbar';
-import './all.sass';
+import Navbar from "../components/Navbar";
+import "./all.sass";
 
-const TemplateWrapper = ({children}) => (
+const TemplateWrapper = ({ children }) => (
   <div className="template-wrapper">
-    <Helmet title="Connor Macleaod || Videographer" />
+    <Helmet title="Connor Macleaod | Videographer" />
     <Navbar />
-    <div className="template-content">{children()}</div>
+    {children()}
   </div>
 );
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.func
 };
 
 export default TemplateWrapper;
-

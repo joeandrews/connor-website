@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {kebabCase} from 'lodash';
-import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
-import PageTransition from 'gatsby-plugin-page-transitions';
-import Content, {HTMLContent} from '../components/Content';
+import React from "react";
+import PropTypes from "prop-types";
+import { kebabCase } from "lodash";
+import Helmet from "react-helmet";
+import Link from "gatsby-link";
+import PageTransition from "gatsby-plugin-page-transitions";
+import Content, { HTMLContent } from "../components/Content";
 
 export const BlogPostTemplate = ({
   content,
@@ -12,13 +12,13 @@ export const BlogPostTemplate = ({
   description,
   tags,
   title,
-  helmet,
+  helmet
 }) => {
   const PostContent = contentComponent || Content;
 
   return (
     <section className="section">
-      {helmet || ''}
+      {helmet || ""}
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
@@ -28,7 +28,7 @@ export const BlogPostTemplate = ({
             <p>{description}</p>
             <PostContent content={content} />
             {tags && tags.length ? (
-              <div style={{marginTop: `4rem`}}>
+              <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
                 <ul className="taglist">
                   {tags.map(tag => (
@@ -51,11 +51,11 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
-  helmet: PropTypes.instanceOf(Helmet),
+  helmet: PropTypes.instanceOf(Helmet)
 };
 
-const BlogPost = ({data}) => {
-  const {markdownRemark: post} = data;
+const BlogPost = ({ data }) => {
+  const { markdownRemark: post } = data;
 
   return (
     <PageTransition>
@@ -73,15 +73,15 @@ const BlogPost = ({data}) => {
 
 BlogPost.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
-  }),
+    markdownRemark: PropTypes.object
+  })
 };
 
 export default BlogPost;
 
 export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
-    markdownRemark(id: {eq: $id}) {
+    markdownRemark(id: { eq: $id }) {
       id
       html
       frontmatter {
@@ -93,4 +93,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
