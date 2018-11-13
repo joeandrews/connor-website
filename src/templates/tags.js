@@ -21,6 +21,8 @@ class TagRoute extends React.Component {
       slidesToScroll: 1,
       infinite: true,
       dots: true,
+      swipe: false,
+      draggable: false,
       initialSlide: 0,
       addaptiveHeight: true,
       responsive: [
@@ -30,6 +32,8 @@ class TagRoute extends React.Component {
             slidesToShow: 2,
             slidesToScroll: 1,
             infinite: true,
+            swipe: false,
+            draggable: false,
             dots: true
           }
         },
@@ -38,14 +42,17 @@ class TagRoute extends React.Component {
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1,
-            initialSlide: 1
+            infinite: true,
+            swipe: false
           }
         },
         {
           breakpoint: 480,
           settings: {
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            infinite: true,
+            swipe: false
           }
         }
       ]
