@@ -5,6 +5,7 @@ import Helmet from "react-helmet";
 import Link from "gatsby-link";
 import PageTransition from "gatsby-plugin-page-transitions";
 import Content, { HTMLContent } from "../components/Content";
+import styles from "./blog-post.module.scss";
 
 export const BlogPostTemplate = ({
   content,
@@ -21,24 +22,10 @@ export const BlogPostTemplate = ({
       {helmet || ""}
       <div className="container content">
         <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
+          <div className="column is-12">
+            <h1 styleName={styles.title}>{title}</h1>
             <p>{description}</p>
             <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
           </div>
         </div>
       </div>

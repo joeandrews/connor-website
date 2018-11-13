@@ -7,5 +7,6 @@ description: fago island project
 tags:
   - video
   - photo 
+  - featured
 ---
 

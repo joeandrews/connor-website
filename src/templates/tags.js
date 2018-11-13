@@ -1,37 +1,69 @@
 import React from "react";
 import Helmet from "react-helmet";
 import Link from "gatsby-link";
+import Slider from "react-slick";
+import PageTransition from "gatsby-plugin-page-transitions";
+import GatsbyImage from "gatsby-image";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import Work from "../components/VideoProject.jsx";
 
 class TagRoute extends React.Component {
   render() {
-    const posts = this.props.data.allMarkdownRemark.edges;
-    const postLinks = posts.map(post => (
-      <li key={post.node.fields.slug}>
-        <Link to={post.node.fields.slug}>
-          <h2 className="is-size-2">{post.node.frontmatter.title}</h2>
-        </Link>
-      </li>
-    ));
-    const tag = this.props.pathContext.tag;
-    const title = this.props.data.site.siteMetadata.title;
-    const totalCount = this.props.data.allMarkdownRemark.totalCount;
-    const tagHeader = `Showing ${totalCount} ${tag} project${
-      totalCount === 1 ? "" : "s"
-    }`;
-
+    const { data } = this.props;
+    const { edges: posts } = data.allMarkdownRemark;
+    var settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      infinite: true,
+      dots: true,
+      initialSlide: 0,
+      addaptiveHeight: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            initialSlide: 1
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    };
     return (
       <section className="section">
-        <Helmet title={`${tag} | ${title}`} />
-        <div className="container content">
-          <div className="columns">
-            <div
-              className="column is-10 is-offset-1"
-              style={{ marginBottom: "6rem" }}
-            >
-              <h3 className="title is-size-4 is-bold-light">{tagHeader}</h3>
-              <ul className="taglist">{postLinks}</ul>
-            </div>
-          </div>
+        <div className="container">
+          <Slider {...settings}>
+            {posts.map(({ node: post }, index) => (
+              <Work
+                title={post.frontmatter.title}
+                link={post.fields.slug}
+                thumbnail={post.frontmatter.thumbnail}
+                date={"Dec 2019"}
+                key={post.id}
+              />
+            ))}
+          </Slider>
         </div>
       </section>
     );
@@ -60,6 +92,9 @@ export const tagPageQuery = graphql`
           }
           frontmatter {
             title
+            thumbnail
+            templateKey
+            date(formatString: "MMMM DD, YYYY")
           }
         }
       }
