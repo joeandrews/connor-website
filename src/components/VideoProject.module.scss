@@ -2,26 +2,24 @@
 
 .work {
 	display: flex;
-	width: 500px;
-	height: 400px;
-	margin: 20px 0px;
-	margin-bottom: 60px;
-	margin-top: 0px;
-	border-top: 2px $accent solid;
-	padding-top: 4px;
+	width: 100vw;
+	height: calc(100vh - 200px);
+	position: relative;
 	h1 {
-		color: $black !important;
+		color: $white !important;
 		font-weight: 500 !important;
 		font-family: 'gt_walsheim' !important;
 		text-transform: lowercase;
-		font-size: 20px;
+		text-shadow: 0px 1px 0px rgba(0,0,0,0.1);
+		font-size: 24px;
 	}
 	p {
-		color: $accent;
+		color: $white;
 		font-family: 'gt_walsheim' !important;
 		font-size: 14px;
 		font-weight: 200;
 		margin-top: -6px;
+		text-shadow: 0px 1px 0px rgba(0,0,0,0.1);
 		padding-bottom: 8px;
 		text-transform: lowercase;
 	}
@@ -35,6 +33,9 @@
 	align-items:flex-start;
 	justify-content: flex-start;
 	flex-direction: column;
+	position: absolute;
+	bottom: 40px;
+	left: 60px;
 }
 .thumbnail {
 	

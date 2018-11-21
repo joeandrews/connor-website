@@ -1,0 +1,27 @@
+
+@import '../layouts/colors';
+.pagination {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	width: 120px;
+	margin-right: 0;
+	margin-left: auto;
+	h5 {
+		margin: 0px;
+		cursor: pointer;
+		padding: 10px 0px;
+		color: $black !important;
+		font-weight: 200 !important;
+		font-family: 'gt_walsheim' !important;
+	}
+	h1 {
+		padding: 10px 5px;
+		margin: 0px;
+		font-weight: 500 !important;
+		color: $black !important;
+		cursor: pointer;
+		font-family: 'gt_walsheim' !important;
+	}
+}

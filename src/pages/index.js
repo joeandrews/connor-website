@@ -8,32 +8,40 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import Work from "../components/VideoProject.jsx";
+import Pagination from "../components/Pagination.jsx";
 
 export default class IndexPage extends React.Component {
   // we need local state here to control the selected post
+  constructor(props) {
+    super(props);
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
+  }
+  state = {
+    currentSlide: 1
+  };
+  next() {
+    this.slider.slickNext();
+  }
+  previous() {
+    this.slider.slickPrev();
+  }
+  onSlideChange = currentSlide => {
+    this.setState({ currentSlide: currentSlide + 1 });
+  };
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
     var settings = {
-      dots: true,
+      // dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 2,
+      slidesToShow: 1,
       slidesToScroll: 1,
       infinite: true,
-      dots: true,
       initialSlide: 0,
       addaptiveHeight: true,
       responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            infinite: true,
-            dots: true
-          }
-        },
         {
           breakpoint: 600,
           settings: {
@@ -54,7 +62,17 @@ export default class IndexPage extends React.Component {
     return (
       <section className="section">
         <div className="container">
-          <Slider {...settings}>
+          <Pagination
+            prev={this.prev}
+            next={this.next}
+            noSlides={posts.length}
+            currentSlide={this.state.currentSlide}
+          />
+          <Slider
+            ref={c => (this.slider = c)}
+            afterChange={this.onSlideChange}
+            {...settings}
+          >
             {posts.map(({ node: post }, index) => (
               <Work
                 title={post.frontmatter.title}
