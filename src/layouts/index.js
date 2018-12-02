@@ -1,18 +1,42 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
+import { Scrollbars } from "react-custom-scrollbars";
+import Measure from "react-measure";
 
 import Navbar from "../components/Navbar";
 import "./all.sass";
 
-const TemplateWrapper = ({ children }) => (
-  <div className="template-wrapper">
-    <Helmet title="Connor Macleaod | Videographer" />
-    <Navbar />
-    {children()}
-  </div>
-);
-
+class TemplateWrapper extends React.Component {
+  state = {
+    dimensions: {
+      width: -1,
+      height: -1
+    }
+  };
+  render() {
+    const { width, height } = this.state.dimensions;
+    const { children } = this.props;
+    return (
+      <Measure
+        bounds
+        onResize={contentRect => {
+          this.setState({ dimensions: contentRect.bounds });
+        }}
+      >
+        {({ measureRef }) => (
+          <div ref={measureRef} className={"template-wrapper"}>
+            <Helmet title="Connor Macleaod | Videographer" />
+            <Scrollbars autoHeight autoHeightMax={height}>
+              <Navbar />
+              {children()}
+            </Scrollbars>
+          </div>
+        )}
+      </Measure>
+    );
+  }
+}
 TemplateWrapper.propTypes = {
   children: PropTypes.func
 };

@@ -17,7 +17,6 @@ class TagRoute extends React.Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 2,
       slidesToScroll: 1,
       infinite: true,
       dots: true,
@@ -60,17 +59,15 @@ class TagRoute extends React.Component {
     return (
       <section className="section">
         <div className="container">
-          <Slider {...settings}>
-            {posts.map(({ node: post }, index) => (
-              <Work
-                title={post.frontmatter.title}
-                link={post.fields.slug}
-                thumbnail={post.frontmatter.thumbnail}
-                date={"Dec 2019"}
-                key={post.id}
-              />
-            ))}
-          </Slider>
+          {posts.map(({ node: post }, index) => (
+            <Work
+              title={post.frontmatter.title}
+              link={post.fields.slug}
+              thumbnail={post.frontmatter.thumbnail}
+              date={"Dec 2019"}
+              key={post.id}
+            />
+          ))}
         </div>
       </section>
     );

@@ -1,48 +1,109 @@
 @import '../layouts/colors';
 
-.work {
-	display: flex;
-	width: 100vw;
-	height: calc(100vh - 200px);
-	position: relative;
-	h1 {
-		color: $white !important;
-		font-weight: 500 !important;
-		font-family: 'gt_walsheim' !important;
-		text-transform: lowercase;
-		text-shadow: 0px 1px 0px rgba(0,0,0,0.1);
-		font-size: 24px;
-	}
-	p {
-		color: $white;
-		font-family: 'gt_walsheim' !important;
-		font-size: 14px;
-		font-weight: 200;
-		margin-top: -6px;
-		text-shadow: 0px 1px 0px rgba(0,0,0,0.1);
-		padding-bottom: 8px;
-		text-transform: lowercase;
-	}
-	a {
-		width: 100%;
-		height: 100%;
-	}
-}
 .meta {
-	display: flex;
-	align-items:flex-start;
-	justify-content: flex-start;
-	flex-direction: column;
-	position: absolute;
-	bottom: 40px;
-	left: 60px;
+	-webkit-transform: translate3d(0,20px,0);
+	transform: translate3d(0,20px,0);
+	-webkit-transition: -webkit-transform 0.35s; 
+	transition: transform 0.35s;
+	color: $white !important;
+	font-weight: 500 !important;
+	font-family: 'gt_walsheim' !important;
+	text-transform: lowercase;
+	text-shadow: 0px 1px 0px rgba(0,0,0,0.2);
+	font-size: 30px;
+	padding: 0px;
+	margin: 0px;
+}
+
+.blurb {
+	color: $white;
+	font-family: 'gt_walsheim' !important;
+	font-size: 20px;
+	font-weight: 400;
+	text-shadow: 0px 1px 0px rgba(0,0,0,0.2);
+	text-transform: lowercase;
+	margin-top: -10px;
+	transform: translate3d(0,20px,0);
+	opacity: 0;
+	transition: opacity 0.2s, transform 0.35s;  
+	padding: 0px;
+
 }
 .thumbnail {
-	
+
 	background-size: cover;
 	background-repeat: no-repeat;
 	width: 100%;
 	height: 100%;
+	max-width: none;
+	width: calc(100% + 80px);
+	opacity: 1;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(-20px,0, 0);
+	transform: translate3d(-20px,0,0);
+	cursor: pointer;
 
+
+}
+.content {
+	
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	display: flex;
+
+	display: flex;
+	align-items:flex-start;
+	justify-content: flex-end;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	overflow:hidden;
+	padding: 40px 40px;
+
+}
+.work {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	margin-right: 4px;
+	overflow: hidden;
+	margin-bottom: 40px;
+	position: relative;
+
+	a {
+	    width: 100%;
+	    height: 100%;
+	    position: absolute;
+	    top: 0px;
+	    left: 0px;
+	    z-index: 10;
+	    pointer-events: all;
+	}
+
+	&:hover {
+		.meta {
+		    webkit-transform: translate3d(0,0,0);
+		    opacity: 1;
+		    transform: translate3d(0,0,0);
+		}
+		.thumbnail {
+
+
+			-webkit-transform: translate3d(0,0,0);
+			transform: translate3d(0,0,0);
+			opacity: 0.8;
+		}
+		.blurb {
+			-webkit-transition-delay: 0.05s;
+			transition-delay: 0.05s;
+			-webkit-transition-duration: 0.35s;
+			transition-duration: 0.35s;
+			opacity: 1;
+			transform: translate3d(0,0,0);
+		}
+	}
 
 }

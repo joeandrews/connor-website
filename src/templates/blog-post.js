@@ -13,20 +13,22 @@ export const BlogPostTemplate = ({
   description,
   tags,
   title,
+  location = "UK",
+  date = "Dec 2019",
   helmet
 }) => {
+  console.log(contentComponent, Content);
   const PostContent = contentComponent || Content;
-
   return (
     <section className="section">
-      {helmet || ""}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-12">
+      <div className="container">
+        <div className={styles.video}>
+          <div className={styles.titleRow}>
             <h1 styleName={styles.title}>{title}</h1>
-            <p>{description}</p>
-            <PostContent content={content} />
+            <p>{`${location}, ${date}`}</p>
           </div>
+          <PostContent content={content} />
+          <p>{description}</p>
         </div>
       </div>
     </section>
@@ -48,7 +50,6 @@ const BlogPost = ({ data }) => {
     <PageTransition>
       <BlogPostTemplate
         content={post.html}
-        contentComponent={HTMLContent}
         description={post.frontmatter.description}
         helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
         tags={post.frontmatter.tags}

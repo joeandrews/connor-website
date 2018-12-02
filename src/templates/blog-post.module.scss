@@ -1,9 +1,52 @@
 @import '../layouts/colors';
 
-.title {
-	color: $black !important;
-	font-weight: 500 !important;
+.titleRow {
 	font-family: 'gt_walsheim' !important;
 	text-transform: lowercase;
-	font-size: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 40px;
+	h1 {
+		color: $black !important;
+		font-weight: 700 !important;
+		font-family: 'gt_walsheim' !important;
+		text-transform: lowercase;
+		font-size: 24px;
+	}
+	p {
+
+		color: $accent !important;
+		font-weight: 500 !important;
+		font-family: 'gt_walsheim' !important;
+		text-transform: lowercase;
+		font-size: 16px;
+	}
+
+}
+.video {
+	height: 100%;
+	overflow-y: scroll;
+	.container {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-content:flex-start;
+		align-items:flex-start;
+		justify-content: flex-start;
+	}
+	.section {
+		flex-grow: 1;
+	}
+}
+.section {
+	height: 100%;
+}
+:global {
+.vp-player-layout {
+	left: 0px !important;
+	right: 0px !important;
+	width: 100% !important;
+	height: 100% !important;
+}
 }

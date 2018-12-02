@@ -2,25 +2,25 @@
 @import "~slick-carousel/slick/slick-theme.css"
 @font-face 
   font-family: "gt_walsheim";
-  src: url("/fonts/GT-Walsheim-Pro-Light.ttf") format("truetype");
+  src: url("/fonts/BebasNeue Thin.ttf") format("truetype");
   font-weight: 200;
 @font-face 
   font-family: "gt_walsheim";
-  src: url("/fonts/GT-Walsheim-Pro-Regular.ttf") format("truetype");
+  src: url("/fonts/BebasNeue Light.ttf") format("truetype");
   font-weight: 300;
 @font-face 
   font-family: "gt_walsheim";
-  src: url("/fonts/GT-Walsheim-Pro-Medium.ttf") format("truetype");
-  font-weight: 500;
+  src: url("/fonts/BebasNeue Book.ttf") format("truetype");
+  font-weight: 400;
 @font-face 
   font-family: "gt_walsheim";
-  src: url("/fonts/GT-Walsheim-Pro-Bold.ttf") format("truetype");
-  font-weight: 700;
+  src: url("/fonts/BebasNeue Regular.ttf") format("truetype");
+  font-weight: 500;
 
 @font-face 
   font-family: "gt_walsheim";
-  src: url("/fonts/GT-Walsheim-Pro-Ultra-Bold.ttf") format("truetype");
-  font-weight: 900;
+  src: url("/fonts/BebasNeue Bold.ttf") format("truetype");
+  font-weight: 600;
 @import "~bulma"
 @import './colors';
 html,body
@@ -39,6 +39,10 @@ html,body
   height: 100%;
   width: 100%;
 
+.template-wrapper 
+  position: relative;
+  height: 100%;
+  width: 100%;
 
 
   
@@ -66,7 +70,6 @@ html,body
   background: none !important;
   flex-direction: column;
   margin: 40px 0px;
-  margin-bottom: 10px;
   .navbar-item
     padding: 0 !important;
   h1
@@ -87,7 +90,7 @@ html,body
       margin-top: -12px;
       color: $accent;
       letter-spacing: 1px;
-      font-weight: 200 !important;
+      font-weight: 500 !important;
       font-size: 16px !important;
       position: relative;
       text-decoration: none;
@@ -111,6 +114,11 @@ html,body
           -webkit-transform: scaleX(1);
           transform: scaleX(1);
 
+      &__active:before
+          visibility: visible;
+          -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+
 .work-container 
 
   display: grid;
@@ -130,15 +138,18 @@ html,body
     font-family: 'gt_walsheim' !important;
     text-transform: lowercase;
   p
-    color: $accent !important;
-    font-weight: 200 !important;
+    color: $black !important;
+    font-weight: 500 !important;
+    line-height: 20px;
     font-family: 'gt_walsheim' !important;
 .slick-slide
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 .slick-slider
   height: 100%;
 .container
   height: 100%;
-
+.slick-arrow
+  display: none !important;
