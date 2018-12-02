@@ -14,8 +14,8 @@ const Content = ({
     {content}
     <iframe
       src={vimeo}
-      width="100%"
-      height="100%"
+      width="700px"
+      height="auto"
       frameborder="0"
       webkitallowfullscreen
       mozallowfullscreen
