@@ -39,7 +39,7 @@ export default class IndexPage extends React.Component {
       slidesToShow: 1,
       autoplaySpeed: 1500,
       slidesToScroll: 1,
-      autoplay: false,
+      autoplay: true,
       infinite: true,
       initialSlide: 0,
       addaptiveHeight: true
@@ -47,12 +47,6 @@ export default class IndexPage extends React.Component {
     console.log(this.state);
     return (
       <section className="section">
-        <Pagination
-          prev={this.prev}
-          next={this.next}
-          noSlides={posts.length}
-          currentSlide={this.state.currentSlide}
-        />
         <Slider
           ref={c => (this.slider = c)}
           afterChange={this.onSlideChange}
