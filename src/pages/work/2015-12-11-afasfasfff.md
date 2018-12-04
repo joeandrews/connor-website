@@ -1,12 +1,14 @@
 ---
 templateKey: blog-post
-title: buggatti - europe
+title: Buggatti - SS18
 thumbnail: /img/screen-shot-2018-07-10-at-22.52.27.png
-date: '2016-12-21T15:04:10+00:00'
-description: |
-  Worked for buggatti
+vimeo: 'https://vimeo.com/298369471'
+date: Invalid date
+location: UK
+description: |+
+
 tags:
-  - video 
+  - video
   - featured
 ---
 
