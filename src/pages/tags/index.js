@@ -3,22 +3,12 @@ import { kebabCase } from "lodash";
 import Helmet from "react-helmet";
 import Link from "gatsby-link";
 
-const TagsPage = ({
-  data: {
-    allMarkdownRemark: { group },
-    site: {
-      siteMetadata: { title }
-    }
-  }
-}) => (
+const TagsPage = ({ data: { allMarkdownRemark: { group }, site: { siteMetadata: { title } } } }) => (
   <section className="section">
     <Helmet title={`Tags | ${title}`} />
-    <div className="container content">
+    <div className=" content">
       <div className="columns">
-        <div
-          className="column is-10 is-offset-1"
-          style={{ marginBottom: "6rem" }}
-        >
+        <div style={{ marginBottom: "6rem" }}>
           <h1 className="title is-size-2 is-bold-light">Tags</h1>
           <ul className="taglist">
             {group.map(tag => (

@@ -13,62 +13,17 @@ class TagRoute extends React.Component {
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
-    var settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToScroll: 1,
-      infinite: true,
-      dots: true,
-      swipe: false,
-      draggable: false,
-      initialSlide: 0,
-      addaptiveHeight: true,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            infinite: true,
-            swipe: false,
-            draggable: false,
-            dots: true
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true,
-            swipe: false
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true,
-            swipe: false
-          }
-        }
-      ]
-    };
     return (
       <section className="section">
-        <div className="container">
-          {posts.map(({ node: post }, index) => (
-            <Work
-              title={post.frontmatter.title}
-              link={post.fields.slug}
-              thumbnail={post.frontmatter.thumbnail}
-              date={"Dec 2019"}
-              key={post.id}
-            />
-          ))}
-        </div>
+        {posts.map(({ node: post }, index) => (
+          <Work
+            title={post.frontmatter.title}
+            link={post.fields.slug}
+            thumbnail={post.frontmatter.thumbnail}
+            location={post.frontmatter.location}
+            key={post.id}
+          />
+        ))}
       </section>
     );
   }
@@ -97,6 +52,7 @@ export const tagPageQuery = graphql`
           frontmatter {
             title
             thumbnail
+            location
             templateKey
             date(formatString: "MMMM DD, YYYY")
           }

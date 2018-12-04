@@ -19,7 +19,7 @@ const VideoProject = ({
     />
     <div className={styles.content}>
       <h1 className={styles.meta}>{title}</h1>
-      <p className={styles.blurb}>{`${location}, ${date}`}</p>
+      <p className={styles.blurb}>{`${location}`}</p>
     </div>
   </div>
 );

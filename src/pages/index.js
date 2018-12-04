@@ -40,7 +40,7 @@ export default class IndexPage extends React.Component {
       slidesToShow: 1,
       autoplaySpeed: 1500,
       slidesToScroll: 1,
-      autoplay: true,
+      autoplay: false,
       infinite: true,
       initialSlide: 0,
       addaptiveHeight: true
@@ -64,7 +64,7 @@ export default class IndexPage extends React.Component {
               title={post.frontmatter.title}
               link={post.fields.slug}
               thumbnail={post.frontmatter.thumbnail}
-              date={"Dec 2019"}
+              location={post.frontmatter.location}
               key={post.id}
             />
           ))}
@@ -103,6 +103,7 @@ export const pageQuery = graphql`
             title
             thumbnail
             templateKey
+            location
             date(formatString: "MMMM DD, YYYY")
           }
         }
