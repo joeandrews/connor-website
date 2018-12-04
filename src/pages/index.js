@@ -21,7 +21,6 @@ export default class IndexPage extends React.Component {
     currentSlide: 1
   };
   next() {
-    console.log("adsf");
     this.slider.slickNext();
   }
   previous() {
@@ -103,7 +102,6 @@ export const pageQuery = graphql`
             title
             thumbnail
             templateKey
-            location
             date(formatString: "MMMM DD, YYYY")
           }
         }
