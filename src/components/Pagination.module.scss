@@ -8,18 +8,23 @@
 	width: 120px;
 	margin-right: 0;
 	margin-left: auto;
+	position: absolute;
+	top: -50px;
+	right: 0px;
+	pointer-events: all;
 	h5 {
 		margin: 0px;
 		cursor: pointer;
 		padding: 10px 0px;
 		color: $black !important;
-		font-weight: 200 !important;
+		font-weight: 400 !important;
 		font-family: 'gt_walsheim' !important;
+		
 	}
 	h1 {
 		padding: 10px 5px;
 		margin: 0px;
-		font-weight: 500 !important;
+		font-weight: 700 !important;
 		color: $black !important;
 		cursor: pointer;
 		font-family: 'gt_walsheim' !important;

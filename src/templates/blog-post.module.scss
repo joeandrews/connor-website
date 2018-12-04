@@ -4,15 +4,17 @@
 	font-family: 'gt_walsheim' !important;
 	text-transform: lowercase;
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding-bottom: 40px;
+	justify-content: flex-start;
+	align-items: flex-end;
+	height: 50px;
+	margin-top: -30px;
 	h1 {
 		color: $black !important;
 		font-weight: 700 !important;
 		font-family: 'gt_walsheim' !important;
 		text-transform: lowercase;
 		font-size: 24px;
+		line-height: 24px;
 	}
 	p {
 
@@ -21,25 +23,38 @@
 		font-family: 'gt_walsheim' !important;
 		text-transform: lowercase;
 		font-size: 16px;
+		padding-left: 16px;
+		line-height: 24px;
 	}
 
 }
 .video {
 	height: 100%;
-	.container {
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		align-content:flex-start;
-		align-items:flex-start;
-		justify-content: flex-start;
-	}
-	.section {
-		flex-grow: 1;
-	}
+	width: 100%;
 }
-.section {
-	height: 100%;
+.videoWrapper {
+	
+	height: 100vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-direction: column;
+	padding-top: 20px;
+	width: 100%;
+	p {
+		min-width: 100%;
+		padding-top: 40px;
+	}
+	
+		.section {
+			flex-grow: 1;
+			width: 100%;
+			min-width: 100%;
+			height: 100%;
+			position:relative;
+			flex-shrink: 1;
+			align-items: flex-start !important;
+	}
 }
 :global {
 .vp-player-layout {

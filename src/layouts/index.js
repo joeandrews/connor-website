@@ -16,7 +16,6 @@ class TemplateWrapper extends React.Component {
   };
   render() {
     const { width, height } = this.state.dimensions;
-    console.log(width, height);
     const { children } = this.props;
     return (
       <Measure
@@ -34,8 +33,10 @@ class TemplateWrapper extends React.Component {
               />
             </Helmet>
             <Scrollbars autoHeight autoHeightMax={height} width={width}>
-              <Navbar />
-              {children()}
+              <div className="container">
+                <Navbar />
+                {children()}
+              </div>
             </Scrollbars>
           </div>
         )}

@@ -13,7 +13,10 @@ const VideoProject = ({
 }) => (
   <div className={styles.work}>
     <Link to={link} />
-    <img className={styles.thumbnail} src={thumbnail} />
+    <div
+      className={styles.thumbnail}
+      style={{ backgroundImage: `url(${thumbnail})` }}
+    />
     <div className={styles.content}>
       <h1 className={styles.meta}>{title}</h1>
       <p className={styles.blurb}>{`${location}, ${date}`}</p>

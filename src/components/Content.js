@@ -1,29 +1,72 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Measure from "react-measure";
 
 export const HTMLContent = ({ content, className }) => (
   <div className={className} dangerouslySetInnerHTML={{ __html: content }} />
 );
 
-const Content = ({
-  content,
-  className,
-  vimeo = "https://player.vimeo.com/video/298369471"
-}) => (
-  <div className={"section"} style={{ height: "100%" }}>
-    {content}
-    <iframe
-      src={vimeo}
-      width="700px"
-      height="auto"
-      frameborder="0"
-      webkitallowfullscreen
-      mozallowfullscreen
-      allowfullscreen
-    />
-  </div>
-);
-
+class Content extends React.Component {
+  state = {
+    dimensions: {
+      width: -1,
+      height: -1
+    }
+  };
+  render() {
+    const { width, height } = this.state.dimensions;
+    const {
+      content,
+      className,
+      vimeo = "https://player.vimeo.com/video/298369471?title=0&byline=0&portrait=0"
+    } = this.props;
+    return (
+      <Measure
+        bounds
+        onResize={contentRect => {
+          this.setState({ dimensions: contentRect.bounds });
+        }}
+      >
+        {({ measureRef }) => (
+          <div
+            ref={measureRef}
+            style={{
+              alignItems: "flex-start",
+              paddingRight: "20px !important",
+              flexGrow: "1",
+              position: "relative",
+              width: "70%"
+            }}
+          >
+            <div
+              style={{
+                padding: "56.25% 0px 0px 0px",
+                position: "relative",
+                width: "100%"
+              }}
+            >
+              <iframe
+                src={vimeo}
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%"
+                }}
+                frameborder="0"
+                webkitallowfullscreen
+                mozallowfullscreen
+                allowfullscreen
+              />
+            </div>
+            <script src="https://player.vimeo.com/api/player.js" />
+          </div>
+        )}
+      </Measure>
+    );
+  }
+}
 Content.propTypes = {
   content: PropTypes.string,
   className: PropTypes.string

@@ -17,18 +17,19 @@ export const BlogPostTemplate = ({
   date = "Dec 2019",
   helmet
 }) => {
-  console.log(contentComponent, Content);
   const PostContent = contentComponent || Content;
   return (
     <section className="section">
-      <div className="container">
-        <div className={styles.video}>
-          <div className={styles.titleRow}>
-            <h1 styleName={styles.title}>{title}</h1>
-            <p>{`${location}, ${date}`}</p>
-          </div>
+      <div className={styles.video}>
+        <div className={styles.titleRow}>
+          <h1 styleName={styles.title}>{title}</h1>
+          <p>{`${location}`}</p>
+        </div>
+        <div className={styles.videoWrapper}>
           <PostContent content={content} />
-          <p>{description}</p>
+          <div className="section">
+            <p>{description}</p>
+          </div>
         </div>
       </div>
     </section>

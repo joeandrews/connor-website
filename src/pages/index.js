@@ -21,6 +21,7 @@ export default class IndexPage extends React.Component {
     currentSlide: 1
   };
   next() {
+    console.log("adsf");
     this.slider.slickNext();
   }
   previous() {
@@ -35,60 +36,39 @@ export default class IndexPage extends React.Component {
     var settings = {
       // dots: true,
       infinite: true,
-      speed: 500,
+      speed: 2000,
       slidesToShow: 1,
       autoplaySpeed: 1500,
       slidesToScroll: 1,
       autoplay: true,
       infinite: true,
       initialSlide: 0,
-      addaptiveHeight: true,
-      responsive: [
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            initialSlide: 1
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-      ]
+      addaptiveHeight: true
     };
+    console.log(this.state);
     return (
       <section className="section">
-        <div className="container">
-          {/*
-          
-          <Pagination
-            prev={this.prev}
-            next={this.next}
-            noSlides={posts.length}
-            currentSlide={this.state.currentSlide}
-          />
-          */}
-          <Slider
-            ref={c => (this.slider = c)}
-            afterChange={this.onSlideChange}
-            {...settings}
-          >
-            {posts.map(({ node: post }, index) => (
-              <Work
-                title={post.frontmatter.title}
-                link={post.fields.slug}
-                thumbnail={post.frontmatter.thumbnail}
-                date={"Dec 2019"}
-                key={post.id}
-              />
-            ))}
-          </Slider>
-        </div>
+        <Pagination
+          prev={this.prev}
+          next={this.next}
+          noSlides={posts.length}
+          currentSlide={this.state.currentSlide}
+        />
+        <Slider
+          ref={c => (this.slider = c)}
+          afterChange={this.onSlideChange}
+          {...settings}
+        >
+          {posts.map(({ node: post }, index) => (
+            <Work
+              title={post.frontmatter.title}
+              link={post.fields.slug}
+              thumbnail={post.frontmatter.thumbnail}
+              date={"Dec 2019"}
+              key={post.id}
+            />
+          ))}
+        </Slider>
       </section>
     );
   }
