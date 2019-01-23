@@ -9,9 +9,10 @@ const VideoProject = ({
   title,
   location = "UK",
   date,
-  company
+  company,
+  isSlim
 }) => (
-  <div className={styles.work}>
+  <div className={`${styles.work} ${isSlim ? styles.isSlim : ''}`}>
     <Link to={link} />
     <div
       className={styles.thumbnail}
@@ -19,7 +20,6 @@ const VideoProject = ({
     />
     <div className={styles.content}>
       <h1 className={styles.meta}>{title}</h1>
-      <p className={styles.blurb}>{`${location}`}</p>
     </div>
   </div>
 );

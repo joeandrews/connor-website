@@ -33,6 +33,7 @@ module.exports = class HTML extends React.Component {
             charset="UTF-8"
             href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
           />
+          <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Yanone+Kaffeesatz:300,400,700" rel="stylesheet">
           <link
             rel="stylesheet"
             type="text/css"

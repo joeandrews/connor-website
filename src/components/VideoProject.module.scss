@@ -1,23 +1,8 @@
 @import '../layouts/colors';
 
-.meta {
-	-webkit-transform: translate3d(0,20px,0);
-	transform: translate3d(0,20px,0);
-	-webkit-transition: -webkit-transform 0.35s; 
-	transition: transform 0.35s;
-	color: $white !important;
-	font-weight: 500 !important;
-	font-family: 'gt_walsheim' !important;
-	text-transform: lowercase;
-	text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
-	font-size: 30px;
-	padding: 0px;
-	margin: 0px;
-}
 
 .blurb {
 	color: $white;
-	font-family: 'gt_walsheim' !important;
 	font-size: 20px;
 	font-weight: 400;
 	text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
@@ -27,22 +12,23 @@
 	opacity: 0;
 	transition: opacity 0.2s, transform 0.35s;  
 	padding: 0px;
+	font-family: 'Source Sans Pro', sans-serif !important;
 
 }
 .thumbnail {
 
-	background-size: cover;
+	background-size: 110% auto;
 	background-repeat: no-repeat;
-	width: 100%;
+	background-position-x: -20px;
+	width: calc(100% + 20px);
 	height: 100%;
 	max-width: none;
 	width: calc(100% + 80px);
 	opacity: 1;
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
-	-webkit-transform: translate3d(-20px,0, 0);
-	transform: translate3d(-20px,0,0);
+	-webkit-transition: all 0.35s;
+	transition: all 0.35s;
 	cursor: pointer;
+	position: relative;
 
 
 }
@@ -60,17 +46,53 @@
 	width: 100%;
 	height: 100%;
 	overflow:hidden;
-	padding: 40px 40px;
+	padding: 40px 30px;
 
 }
 .work {
 	display: flex;
-	width: 100%;
-	height: 50%;
+	width: 80%;
+	height: 25%;
 	position: relative;
 	margin-right: 4px;
 	overflow: hidden;
-	margin-bottom: 40px;
+	position: relative;
+	overflow:hidden;
+	align-items: center;
+	padding: 0px;
+	.thumbnail {
+		height: 70% !important;
+	}
+
+	a {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		z-index: 10;
+		pointer-events: all;
+	}
+	.meta {
+		color: $black ;
+		font-weight: 900 !important;
+		font-size: 24px;
+		padding: 0px;
+		margin: 0px;
+		position: absolute;
+		bottom: 20px;
+		left: 0px;
+	}
+}
+
+.isSlim {
+	display: flex;
+	width: 70%;
+	height: 25%;
+	position: relative;
+	margin-right: 4px;
+	overflow: hidden;
+	margin-bottom: 0px;
 	position: relative;
 
 	a {
@@ -82,6 +104,19 @@
 	    z-index: 10;
 	    pointer-events: all;
 	}
+	.meta {
+		-webkit-transform: translate3d(0,20px,0);
+		transform: translate3d(0,20px,0);
+		-webkit-transition: -webkit-transform 0.35s; 
+		transition: transform 0.35s;
+		color: $white !important;
+		font-weight: 900 !important;
+		font-size: 20px;
+		padding: 0px;
+		margin: 0px;
+		position: relative;
+		bottom: 30px;
+	}
 
 	&:hover {
 		.meta {
@@ -92,8 +127,7 @@
 		.thumbnail {
 
 
-			-webkit-transform: translate3d(0,0,0);
-			transform: translate3d(0,0,0);
+			background-position-x: 0px;
 			opacity: 0.8;
 		}
 		.blurb {

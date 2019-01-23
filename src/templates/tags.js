@@ -65,6 +65,7 @@ class TagRoute extends React.Component {
               link={post.fields.slug}
               thumbnail={post.frontmatter.thumbnail}
               location={post.frontmatter.location}
+              isSlim={true}
               key={post.id}
             />
           ))}

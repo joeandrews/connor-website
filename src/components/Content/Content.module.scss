@@ -1,0 +1,10 @@
+
+/* Using SCSS variables to store breakpoints */
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 320px;
+@media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+	.navbar-start{
+		width: 100%;
+		display: flex;
+	}
+}
