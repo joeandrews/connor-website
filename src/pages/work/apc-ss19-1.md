@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: APC SS19/1
 thumbnail: /img/apc1.jpg
-vimeo: 'https://vimeo.com/298369471'
+vimeo: '298369471'
 date: Invalid date
 location: UK
 description: |

@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: SUITCASE Magazine- The Design Issue
 thumbnail: /img/suit1.jpg
-vimeo: 'https://vimeo.com/259184603'
+vimeo: '259184603'
 date: '2019-01-23T23:58:15+00:00'
 location: Tawain
 description: >-

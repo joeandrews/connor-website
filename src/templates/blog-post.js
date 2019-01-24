@@ -14,14 +14,16 @@ export const BlogPostTemplate = ({
   tags,
   title,
   date = "Dec 2019",
-  helmet
+  vimeo,
+  helmet,
+  ...rest
 }) => {
   const PostContent = contentComponent || Content;
   return (
     <section className="section">
       <div className={styles.video}>
         <div className={styles.videoWrapper}>
-          <PostContent content={content} />
+          <PostContent content={content} vimeo={vimeo} />
           <div className={styles.titleRow}>
             <h1 styleName={styles.title}>{title}</h1>
           </div>
@@ -53,6 +55,7 @@ const BlogPost = ({ data }) => {
         helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        vimeo={post.frontmatter.vimeo}
       />
     </PageTransition>
   );
@@ -76,6 +79,7 @@ export const pageQuery = graphql`
         title
         description
         tags
+        vimeo
       }
     }
   }

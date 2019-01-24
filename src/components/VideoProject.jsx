@@ -12,7 +12,7 @@ const VideoProject = ({
   company,
   isSlim
 }) => (
-  <div className={`${styles.work} ${isSlim ? styles.isSlim : ''}`}>
+  <div className={`${styles.work} ${isSlim ? styles.isSlim : ""}`}>
     <Link to={link} />
     <div
       className={styles.thumbnail}

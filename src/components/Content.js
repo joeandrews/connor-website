@@ -15,11 +15,7 @@ class Content extends React.Component {
   };
   render() {
     const { width, height } = this.state.dimensions;
-    const {
-      content,
-      className,
-      vimeo = "https://player.vimeo.com/video/298369471?title=0&byline=0&portrait=0"
-    } = this.props;
+    const { content, className, vimeo } = this.props;
     return (
       <Measure
         bounds
@@ -46,7 +42,7 @@ class Content extends React.Component {
               }}
             >
               <iframe
-                src={vimeo}
+                src={`https://player.vimeo.com/video/${vimeo}?title=0&byline=0&portrait=0`}
                 style={{
                   position: "absolute",
                   top: 0,
