@@ -10,9 +10,14 @@ const VideoProject = ({
   location = "UK",
   date,
   company,
-  isSlim
+  isSlim,
+  index
 }) => (
-  <div className={`${styles.work} ${isSlim ? styles.isSlim : ""}`}>
+  <div
+    className={`${styles.work} ${isSlim ? styles.isSlim : ""} ${
+      index % 2 === 0 ? styles.right : ""
+    }`}
+  >
     <Link to={link} />
     <div
       className={styles.thumbnail}

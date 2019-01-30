@@ -32,12 +32,10 @@ class TemplateWrapper extends React.Component {
                 content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
               />
             </Helmet>
-            <Scrollbars autoHeight autoHeightMax={height} width={width}>
-              <div className="container">
-                <Navbar />
-                {children()}
-              </div>
-            </Scrollbars>
+            <div className="container">
+              <Navbar />
+              {children()}
+            </div>
           </div>
         )}
       </Measure>

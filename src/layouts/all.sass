@@ -17,13 +17,21 @@ html,body
   position: relative;
   height: 100%;
   width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
 .template-wrapper 
   position: relative;
   height: 100%;
   width: 100%;
 
-
+.mainvid 
+  height: auto !important;
+  display: block !important;
+  overflow-y: visible;
+  position: relative;
+  overflow-x: visible;
+  width: 100%;
   
 .content .taglist
   list-style: none
@@ -101,7 +109,6 @@ html,body
 .section
   padding: 0px !important;
   height: 100%;
-  flex-grow: 2;
   display: flex;
   flex-shrink: 1;
   position: relative;

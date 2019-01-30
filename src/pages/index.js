@@ -1,14 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
-import Slider from "react-slick";
 import PageTransition from "gatsby-plugin-page-transitions";
 import GatsbyImage from "gatsby-image";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
+import StackGrid, { transitions } from "react-stack-grid";
 import Work from "../components/VideoProject.jsx";
 import Pagination from "../components/Pagination.jsx";
+const { scaleDown } = transitions;
 
 export default class IndexPage extends React.Component {
   // we need local state here to control the selected post
@@ -32,36 +31,18 @@ export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
-    var settings = {
-      // dots: true,
-      infinite: true,
-      speed: 2000,
-      slidesToShow: 1,
-      autoplaySpeed: 1500,
-      slidesToScroll: 1,
-      autoplay: true,
-      infinite: true,
-      initialSlide: 0,
-      addaptiveHeight: true
-    };
-    console.log(this.state);
     return (
-      <section className="section">
-        <Slider
-          ref={c => (this.slider = c)}
-          afterChange={this.onSlideChange}
-          {...settings}
-        >
-          {posts.map(({ node: post }, index) => (
-            <Work
-              title={post.frontmatter.title}
-              link={post.fields.slug}
-              thumbnail={post.frontmatter.thumbnail}
-              location={post.frontmatter.location}
-              key={post.id}
-            />
-          ))}
-        </Slider>
+      <section className="section mainvid">
+        {posts.map(({ node: post }, index) => (
+          <Work
+            title={post.frontmatter.title}
+            link={post.fields.slug}
+            thumbnail={post.frontmatter.thumbnail}
+            location={post.frontmatter.location}
+            key={post.id}
+            index={index}
+          />
+        ))}
       </section>
     );
   }
@@ -82,7 +63,7 @@ export const pageQuery = graphql`
       filter: {
         frontmatter: {
           templateKey: { eq: "blog-post" }
-          tags: { in: ["featured"] }
+          tags: { in: ["video"] }
         }
       }
     ) {

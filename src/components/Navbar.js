@@ -12,13 +12,6 @@ const Navbar = () => {
       <div className="navbar-start">
         <Link
           className="navbar-item"
-          to="/tags/video"
-          activeClassName={"navbar-item__active"}
-        >
-          videos
-        </Link>
-        <Link
-          className="navbar-item"
           to="/about"
           activeClassName={"navbar-item__active"}
         >
