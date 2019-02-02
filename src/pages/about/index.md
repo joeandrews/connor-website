@@ -1,14 +1,6 @@
 ---
-templateKey: 'about-page'
-path: /about
-title: About
+about: >-
+  Freelance Director of Photography and Photographer. From Devon, based in
+  London.
 ---
-### About 
-Connor is an established videographer originally from the Devon in the United Kingdom. He has worked with the likes of Suitcase Magazine, Buggatti and Vogue over the last 3 years.
-
-He currently lives in East London and is available for freelance hire.
-
-### Kit
-One camera
-
 
