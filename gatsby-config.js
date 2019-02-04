@@ -5,8 +5,13 @@ module.exports = {
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
-    "gatsby-plugin-favicon",
     "gatsby-plugin-page-transitions",
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: `${__dirname}/src/favicon.png`
+      }
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
