@@ -27,19 +27,9 @@ module.exports = class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          <link
-            rel="stylesheet"
-            type="text/css"
-            charset="UTF-8"
-            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-          />
-          <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
-          <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-          />
-          <link href="https://fonts.googleapis.com/css?family=Khand:400,500,600" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css?family=Exo:400,700,800,900|Open+Sans:400,700" rel="stylesheet">
+            <link rel="icon" type="image/png" href="/static/img/favicon-32x32.png" sizes="32x32" />
+            <link rel="icon" type="image/png" href="static/img/favicon-16x16.png" sizes="16x16" />
           {this.props.headComponents}
           {css}
         </head>

@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="navbar is-transparent">
       <div className="navbar-brand">
         <Link to="/" className="navbar-item">
-          <h1>connor macleod</h1>
+          <div className="title">Connor Macleod</div>
         </Link>
       </div>
       <div className="navbar-start">

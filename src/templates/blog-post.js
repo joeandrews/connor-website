@@ -29,6 +29,13 @@ export const BlogPostTemplate = ({
           </div>
           <div className="section">
             <p>{description}</p>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
           </div>
         </div>
       </div>

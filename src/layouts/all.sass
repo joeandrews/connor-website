@@ -1,9 +1,8 @@
-@import "~slick-carousel/slick/slick.css"
-@import "~slick-carousel/slick/slick-theme.css"
 @import "~bulma"
 @import './colors';
+
 html,body
-  font-family: 'Khand', sans-serif !important;
+  font-family: 'Open Sans', sans-serif !important;
   background: $white !important;
   position: relative;
   height: 100%;
@@ -12,6 +11,10 @@ html,body
   margin: 0px;
   box-sizing: border-box;
   overflow: hidden;
+
+@font-face
+  font-family: "Exo Black";
+  src: url('../../static/fonts/exo-black.ttf') format('truetype');
 
 #___gatsby
   position: relative;
@@ -27,11 +30,23 @@ html,body
 
 .mainvid 
   height: auto !important;
-  display: block !important;
   overflow-y: visible;
+  display: flex;
+  flex-direction: column;
   position: relative;
   overflow-x: visible;
-  width: 100%;
+  width: 100vw;
+  padding: 40px 0px;
+@media screen and (min-width: 1024px)
+  .mainvid
+    margin-left: calc(480px - 50vw);
+  
+@media screen and (min-width: 1216px)
+  .mainvid
+    margin-left: calc(576px - 50vw);
+@media screen and (min-width: 1408px)
+  .mainvid
+    margin-left: calc((672px - 50vw);
   
 .content .taglist
   list-style: none
@@ -58,10 +73,11 @@ html,body
   margin-bottom: 20px;
   .navbar-item
     padding: 0 !important;
-  h1
-    font-weight: 700;
-    font-size: 32px;
-    font-family: 'Khand', sans-serif !important;
+  .title
+    font-family: "Exo" !important;
+    font-weight: 700 !important;
+    font-size: 38px;
+
     color: $black;
     // padding: 0px 14px;
   .navbar-brand
@@ -70,18 +86,19 @@ html,body
   .navbar-start
     margin-left: 40px;
     margin-top: 22px;
+    margin-left: auto;
+    margin-right: 0px;
     .navbar-item
       padding: 0px
       margin-right: 14px;
       margin-top: -12px;
       color: $accent;
-      font-weight: 500 !important;
-      font-size: 16px !important;
+      font-weight: 600 !important;
+      font-size: 20px !important;
       position: relative;
       text-decoration: none;
       pointer-events: all;
       cursor: pointer;
-      font-family: 'Khand', sans-serif !important;
       &:before 
         content: "";
         position: absolute;
@@ -138,7 +155,5 @@ html,body
   height: 80%;
   width: 100%;
 .container
-  height: 90vh;
-  padding: 0px 20px;
 .slick-arrow
   display: none !important;

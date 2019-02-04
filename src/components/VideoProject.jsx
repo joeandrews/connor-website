@@ -12,21 +12,23 @@ const VideoProject = ({
   company,
   isSlim,
   index
-}) => (
-  <div
-    className={`${styles.work} ${isSlim ? styles.isSlim : ""} ${
-      index % 2 === 0 ? styles.right : ""
-    }`}
-  >
-    <Link to={link} />
+}) => {
+  return (
     <div
-      className={styles.thumbnail}
-      style={{ backgroundImage: `url(${thumbnail})` }}
-    />
-    <div className={styles.content}>
-      <h1 className={styles.meta}>{title}</h1>
+      className={`${styles.work} ${isSlim ? styles.isSlim : ""} ${
+        styles[index]
+      }`}
+    >
+      <Link to={link} />
+      <img
+        className={styles.thumbnail}
+        src={thumbnail}
+        style={{ backgroundImage: `url(${thumbnail})` }}
+      />
+      <div className={styles.content}>
+        <h1 className={styles.meta}>{title}</h1>
+      </div>
     </div>
-  </div>
-);
-
+  );
+};
 export default VideoProject;

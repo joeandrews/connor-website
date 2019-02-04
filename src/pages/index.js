@@ -31,18 +31,34 @@ export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
+    let count = -1;
+    const countMap = {
+      "-1": "four",
+      "0": "one",
+      "1": "two",
+      "2": "three"
+    };
     return (
       <section className="section mainvid">
-        {posts.map(({ node: post }, index) => (
-          <Work
-            title={post.frontmatter.title}
-            link={post.fields.slug}
-            thumbnail={post.frontmatter.thumbnail}
-            location={post.frontmatter.location}
-            key={post.id}
-            index={index}
-          />
-        ))}
+        {posts.map(({ node: post }, index) => {
+          if (count < 2) {
+            count++;
+          } else {
+            count = -1;
+          }
+          console.log(countMap[count]);
+
+          return (
+            <Work
+              title={post.frontmatter.title}
+              link={post.fields.slug}
+              thumbnail={post.frontmatter.thumbnail}
+              location={post.frontmatter.location}
+              key={post.id}
+              index={countMap[count.toString()]}
+            />
+          );
+        })}
       </section>
     );
   }

@@ -2,17 +2,14 @@
 
 .titleRow {
 	text-transform: lowercase;
-	display: flex;
-	justify-content: flex-start;
-	align-items: flex-end;
 	height: 50px;
-	margin-top: 30px;
+	margin-top: 20px;
 	h1 {
 		color: $black !important;
 		font-weight: 900 !important;
 		font-size: 22px;
 		line-height: 24px;
-		margin: 0px;
+		margin-top: 10px;
 	}
 	p {
 
@@ -41,7 +38,8 @@
 	width: 100%;
 	p {
 		min-width: 100%;
-		padding-top: 40px;
+		padding-top: 60px;
+		padding-bottom: 180px;
 	}
 	
 		.section {
