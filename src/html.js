@@ -27,7 +27,22 @@ module.exports = class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          <link href="https://fonts.googleapis.com/css?family=Exo:400,700,800,900|Open+Sans:400,700" rel="stylesheet">
+          <link
+            href="https://fonts.googleapis.com/css?family=Exo:400,700,800,900|Open+Sans:400,700"
+            rel="stylesheet"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            href="/img/favicon-32x32.png"
+            sizes="32x32"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            href="/img/favicon-16x16.png"
+            sizes="16x16"
+          />
           {this.props.headComponents}
           {css}
         </head>

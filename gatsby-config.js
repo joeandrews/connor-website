@@ -7,12 +7,6 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-page-transitions",
     {
-      resolve: `gatsby-plugin-favicon`,
-      options: {
-        logo: `${__dirname}/src/favicon.png`
-      }
-    },
-    {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/pages`,
