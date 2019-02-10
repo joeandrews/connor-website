@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: 'John Lewis- A/W 2018 Campaign '
-thumbnail: /img/sequence-04.00_00_04_06.still001.jpg
+thumbnail: /img/ezgif.com-video-to-gif-3-.gif
 vimeo: '316404076'
 date: '2019-02-10T16:21:44+00:00'
 location: London
