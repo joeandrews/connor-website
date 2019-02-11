@@ -19,6 +19,8 @@ export const BlogPostTemplate = ({
   ...rest
 }) => {
   const PostContent = contentComponent || Content;
+const { markdownRemark } = description;
+
   return (
     <section className="section">
       <div className={styles.video}>
@@ -27,8 +29,10 @@ export const BlogPostTemplate = ({
           <div className={styles.titleRow}>
             <h1 styleName={styles.title}>{title}</h1>
           </div>
-          <div className="section">
-            <p>{description}</p>
+          <div className="section"
+          
+            dangerouslySetInnerHTML={{ __html: html }}
+          >
             <br />
             <br />
             <br />
