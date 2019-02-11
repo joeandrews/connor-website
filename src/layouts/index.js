@@ -26,11 +26,13 @@ class TemplateWrapper extends React.Component {
       >
         {({ measureRef }) => (
           <div ref={measureRef} className={"template-wrapper"}>
-            <Helmet title="Connor MacLeod | Videographer">
+            <Helmet title="Connor MacLeod |  Director/DoP">
               <meta
                 name="viewport"
                 content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
               />
+
+              <link rel="canonical" href="https://www.connorimacleod.com" />
             </Helmet>
             <div className="container">
               <Navbar />
