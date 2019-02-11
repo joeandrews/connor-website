@@ -32,7 +32,7 @@ class TemplateWrapper extends React.Component {
                 content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
               />
 
-              <link rel="canonical" href="https://www.connorimacleod.com" />
+              <link rel="canonical" href="https://connorimacleod.com" />
             </Helmet>
             <div className="container">
               <Navbar />
