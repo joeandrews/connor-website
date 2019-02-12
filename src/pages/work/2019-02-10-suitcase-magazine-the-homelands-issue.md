@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: SUITCASE Magazine- The Homelands Issue
-thumbnail: /img/screen-shot-2019-02-10-at-18.32.37.png
+thumbnail: /img/k.jpg
 vimeo: '232949387'
 date: '2019-02-10T18:30:51+00:00'
 location: Peru
