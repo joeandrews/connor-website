@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: Conde Nast Traveller- Utah Desert
-thumbnail: /img/screen-shot-2019-02-10-at-18.13.52.png
+thumbnail: /img/e.jpg
 vimeo: '230801580'
 date: '2019-02-10T18:12:18+00:00'
 location: Utah

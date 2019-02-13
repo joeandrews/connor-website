@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: 'SUITCASE Magazine-Islands: Fogo Island'
-thumbnail: /img/suit2.jpg
+thumbnail: /img/i.jpg
 vimeo: '248697156'
 date: '2019-01-24T00:00:25+00:00'
 location: Fogo Islands
