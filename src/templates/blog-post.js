@@ -19,7 +19,7 @@ export const BlogPostTemplate = ({
   ...rest
 }) => {
   const PostContent = contentComponent || Content;
-const { markdownRemark } = description;
+  const { markdownRemark } = description;
 
   return (
     <section className="section">
@@ -29,9 +29,9 @@ const { markdownRemark } = description;
           <div className={styles.titleRow}>
             <h1 styleName={styles.title}>{title}</h1>
           </div>
-          <div className="section"
-          
-            dangerouslySetInnerHTML={{ __html: html }}
+          <div
+            className="section"
+            dangerouslySetInnerHTML={{ __html: markdownRemark.html }}
           >
             <br />
             <br />
