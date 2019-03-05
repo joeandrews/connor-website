@@ -19,6 +19,7 @@ export const BlogPostTemplate = ({
   ...rest
 }) => {
   const PostContent = contentComponent || Content;
+  console.log(description);
 
   return (
     <section className="section">
@@ -28,16 +29,15 @@ export const BlogPostTemplate = ({
           <div className={styles.titleRow}>
             <h1 styleName={styles.title}>{title}</h1>
           </div>
-          <div className="section">
-            <p>{description}</p>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+          <br/>
+          <div className="section work"
+
+            dangerouslySetInnerHTML={{ __html: description }}
+          >
           </div>
+          <br/>
+          <br/>
+          <br/>
         </div>
       </div>
     </section>
@@ -54,6 +54,7 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data;
+  console.log(post.html);
 
   return (
     <PageTransition>

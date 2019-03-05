@@ -17,13 +17,6 @@ const Navbar = () => {
         >
           about
         </Link>
-        <Link
-          className="navbar-item"
-          to="/contact"
-          activeClassName={"navbar-item__active"}
-        >
-          contact
-        </Link>
       </div>
     </nav>
   );

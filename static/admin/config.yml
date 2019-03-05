@@ -29,11 +29,5 @@ collections:
         name: "about"
         fields:
           - {label: "About", name: "about", widget: "markdown"}
-  - name: "Contact"
-    label: "Contact"
-    files:
-      - file: "src/pages/contact/index.md"
-        label: "Contact"
-        name: "contact"
-        fields:
-          - {label: "Contact", name: "contact", widget: "markdown"}
+          - {label: "Kit", name: "kit", widget: "markdown"}
+          - {label: "Clients", name: "clients", widget: "markdown"}
