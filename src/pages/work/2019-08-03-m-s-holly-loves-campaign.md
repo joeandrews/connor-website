@@ -3,7 +3,7 @@ templateKey: blog-post
 title: M&S - Holly Loves Campaign
 thumbnail: /img/holly.jpg
 vimeo: '351764431'
-date: '2018-08-01T12:16:47+02:00'
+date: '2016-08-13T12:16:47+02:00'
 location: London
 description: |-
   New work for @marksandspencer featuring @hollywilloughby 
