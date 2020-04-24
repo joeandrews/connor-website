@@ -24,10 +24,6 @@ export const AboutPageTemplate = ({ title, content,about, kit, clients, contentC
             <h3>about</h3>
             <PageContent className="content" content={about} />
           </div>
-          <div className="section contact-details">
-            <h3>kit</h3>
-            <PageContent className="content" content={kit} />
-          </div>
         </div>
       </div>
     </section>
@@ -68,7 +64,6 @@ export const aboutPageQuery = graphql`
       frontmatter {
         title
         about
-        kit
         clients
       }
     }
