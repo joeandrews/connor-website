@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: ZALANDO x EMMA MARRONE
-thumbnail: /img/screenshot-2020-08-18-at-11.15.56-copy.jpg
+thumbnail: /img/emma.jpg
 vimeo: '448834559'
 date: '2016-05-24T11:14:00+01:00'
 location: ROME
