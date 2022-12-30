@@ -6,7 +6,7 @@
   "dependencies": {
     "bulma": "^0.6.0",
     "eslint": "^5.2.0",
-    "gatsby": "^1.9.213",
+    "gatsby": "^5.3.3",
     "gatsby-image": "^1.0.55",
     "gatsby-link": "^1.6.37",
     "gatsby-plugin-favicon": "^3.1.5",
